@@ -1,0 +1,336 @@
+/* ======================
+   SIMPLE CSS
+   Ng Wen Siang Portfolio
+   ====================== */
+
+/* ── Variables ── */
+:root {
+  --navy:    #0f2340;
+  --blue:    #2e7dba;
+  --text:    #1e2a38;
+  --muted:   #6b7a8d;
+  --border:  #d0dce8;
+  --bg:      #f5f7fa;
+  --white:   #ffffff;
+}
+
+/* ── Base ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.2rem; }
+h3 { font-size: 1rem; }
+
+p { margin-bottom: 0.5rem; }
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ── Header ── */
+header {
+  background-color: var(--navy);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header span,
+header a {
+  color: var(--white);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a[aria-current="page"] {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* ── Hero ── */
+section[aria-labelledby="hero-heading"],
+section[aria-labelledby="page-heading"] {
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+section[aria-labelledby="hero-heading"] h1,
+section[aria-labelledby="page-heading"] h1 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+section[aria-labelledby="hero-heading"] p,
+section[aria-labelledby="page-heading"] p {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Index: 3-column main ── */
+main > div {
+  display: grid;
+  grid-template-columns: 200px 1fr 220px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+main > div > aside,
+main > div > section {
+  padding: 1.5rem;
+}
+
+main > div > aside:first-child {
+  border-right: 1px solid var(--border);
+}
+
+main > div > section {
+  border-right: 1px solid var(--border);
+}
+
+/* Technical Skills list in left sidebar */
+main > div > aside:first-child ul li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+main > div > aside:first-child ul li:last-child {
+  border-bottom: none;
+}
+
+/* Work experience articles */
+main > div > section article {
+  margin-bottom: 0.75rem;
+}
+
+main > div > section article ul {
+  list-style: disc;
+  padding-left: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+main > div > section article ul li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+/* Education right sidebar */
+main > div > aside:last-child {
+  background-color: #fafcfe;
+}
+
+main > div > aside:last-child article {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+main > div > aside:last-child article:last-of-type {
+  border-bottom: none;
+}
+
+main > div > aside:last-child ul li {
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px dotted var(--border);
+}
+
+main > div > aside:last-child ul li:last-child {
+  border-bottom: none;
+}
+
+/* ── Connect section (index) ── */
+section[aria-labelledby="connect-heading"] {
+  background-color: #eaf2fb;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+section[aria-labelledby="connect-heading"] ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+section[aria-labelledby="connect-heading"] ul li a {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+section[aria-labelledby="connect-heading"] ul li a:hover {
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ── Articles page ── */
+main[aria-label="Articles"] {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+main[aria-label="Articles"] article header h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+main[aria-label="Articles"] article header p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+main[aria-label="Articles"] article > p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0.5rem 0;
+}
+
+/* ── Projects page ── */
+main[aria-label="Projects"] {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+main[aria-label="Projects"] article h2 {
+  font-size: 1.15rem;
+}
+
+main[aria-label="Projects"] article p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0.4rem 0;
+}
+
+main[aria-label="Projects"] article ul {
+  list-style: none;
+  margin: 0.4rem 0 0.75rem;
+}
+
+main[aria-label="Projects"] article ul li {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ── Contact page ── */
+main[aria-label="Contact"] {
+  max-width: 750px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: block;
+}
+
+main[aria-label="Contact"] article h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+main[aria-label="Contact"] article p,
+main[aria-label="Contact"] article ul li {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+main[aria-label="Contact"] article ul {
+  list-style: none;
+}
+
+main[aria-label="Contact"] hr {
+  display: none;
+}
+
+/* ── Footer ── */
+body > footer {
+  background-color: var(--navy);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 800px) {
+  main > div {
+    grid-template-columns: 1fr;
+  }
+
+  main > div > aside:first-child,
+  main > div > section {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav ul li a {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.4rem;
+  }
+}
